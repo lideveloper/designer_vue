@@ -4,30 +4,22 @@
       <div @click="collapse=!collapse">折叠</div>
     </el-header>
     <el-container direction="horizontal" class="main-container">
-      <el-aside :width="collapse?'64px':'240px'" class="aside">
+      <el-aside :width="collapse?'64px':'240px'" class="aside"><!---->
       </el-aside>
-      <el-scrollbar class="scrollbar" :wrap-style="[{overflowX: 'hidden'}]">
+      <el-scrollbar class="scrollbar" :style="[collapse?{width: '271px'}:{width: '240px'}]"
+                    :wrap-style="[{overflowX: 'hidden'}]">
         <el-menu background-color="#545c64"
                  text-color="#fff"
-                 :style="[collapse?{}:{width:'240px'},{border:'none'}]"
+                 :style="[{border:'none'}]"
+                 class="menu"
                  active-text-color="#ffd04b"
-                 :collapse="collapse">
+                 :collapse="collapse"><!---->
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="icon-d-qiyeshenfenrz"></i>
               <span>菜单1</span>
             </template>
             <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
@@ -43,19 +35,6 @@
             <el-menu-item index="1-1">选项1</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
 
           </el-submenu>
           <el-submenu index="3">
@@ -64,21 +43,6 @@
               <span>菜单1</span>
             </template>
             <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
 
           </el-submenu>
           <el-submenu index="4">
@@ -87,16 +51,6 @@
               <span>菜单1</span>
             </template>
             <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
@@ -118,14 +72,6 @@
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-
           </el-submenu>
 
         </el-menu>
@@ -159,26 +105,33 @@
   }
 
   .aside {
+    width: 240px;
     position: relative;
     background: #545c64;
     z-index: 1;
+    transition: width 0.3s ease-in 0s;
+    -moz-transition: width 0.3s ease-in 0s;
+    -webkit-transition: width 0.3s ease-in 0s;
+    -o-transition: width 0.3s ease-in 0s;
   }
 
   .scrollbar {
     position: absolute;
     left: 0;
     top: 0;
-    width: 240px;
     bottom: 0;
     z-index: 11;
   }
 
-  .horizontal-collapse-transition {
-    -webkit-transition: all 0s ease 0s;
-    transition: all 0s ease 0s;
+  .horizontal-collapse-transition, .el-menu, .el-menu--collapse {
+    transition: width 0.3s ease-in 0s;
+    -moz-transition: width 0.3s ease-in 0s;
+    -webkit-transition: width 0.3s ease-in 0s;
+    -o-transition: width 0.3s ease-in 0s;
   }
 
-  /*  .menu {
-      width: 240px;
-    }*/
+  .menu:not(.el-menu--collapse) {
+    width: 240px;
+    height: 100%;
+  }
 </style>
