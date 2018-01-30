@@ -51,7 +51,22 @@
             this.logining = true
             //NProgress.start();
             var loginParams = {account: this.loginForm.account, password: this.loginForm.password}
-            this.$router.replace({name: 'home'})
+            //this.$router.replace({name: 'home'})
+            this.$axios.get('/index', {
+              params:{
+                "userId": 1,
+                "receiveTimeFrom": "2018-01-16 00:33:03",
+                "receiveTimeTo": "2018-01-20 00:33:03",
+                "status": "01",
+                "expired": 1
+              }
+            })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (response) {
+                console.log(response);
+              });
           }
 
         })
