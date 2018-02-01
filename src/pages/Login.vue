@@ -23,11 +23,14 @@
 </template>
 
 <script>
+  import SessionUtil from '@/utils/sessionUtil.js'
+  import Vue from 'vue'
+
   export default {
     data: function () {
       return {
         loginForm: {
-          account: 'admin',
+          account: '李师师',
           password: '123456'
         },
         logining: false,
@@ -48,21 +51,14 @@
       login: function () {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
-            this.logining = true
+            //this.logining = true
             //NProgress.start();
-            var loginParams = {account: this.loginForm.account, password: this.loginForm.password}
+            var loginParams = {username: this.loginForm.account, password: this.loginForm.password}
             //this.$router.replace({name: 'home'})
-            this.$axios.get('/index', {
-              params:{
-                "userId": 1,
-                "receiveTimeFrom": "2018-01-16 00:33:03",
-                "receiveTimeTo": "2018-01-20 00:33:03",
-                "status": "01",
-                "expired": 1
-              }
-            })
+            this.$axios.post('/login', loginParams)
               .then(function (response) {
                 console.log(response);
+                SessionUtil.saveUser(response.data);
               })
               .catch(function (response) {
                 console.log(response);
@@ -73,6 +69,22 @@
       },
       reset: function () {
         this.$refs['loginForm'].resetFields();
+        console.log(this.$getUser());
+        /*this.$axios.post('/displayworker/getDisplayWorkerTasks',
+          {
+            "userId": 1,
+            "receiveTimeFrom": "2018-01-16 00:33:03",
+            "receiveTimeTo": "2018-01-20 00:33:03",
+            "status": "01",
+            "expired": 1
+          }
+        )
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (response) {
+            console.log(response);
+          });*/
       }
     }
   }

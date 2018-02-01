@@ -7,41 +7,35 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/icon/iconfont.css'
 import * as axios from 'axios';
+import SessionUtil from '@/utils/sessionUtil.js'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-/* eslint-disable no-new */
-/*Vue.prototype.$axios = axios
-Vue.prototype.$axios.defaults.transformRequest.push(function (data) {
-  return data;
-})*/
+
+/**
+ * 设置默认属性
+ */
 Vue.prototype.$axios = axios.create({
-  baseURL: '/api/', timeout: 10000,
-  headers: {'X-Custom-Header': 'foobar'}
+  baseURL: '/api/',
+  timeout: 10000,
+  withCredentials: true
 });
-Vue.prototype.$axios.interceptors.request.use(
-  function (config) {
-    //在发送请求之前做某事
-    return config;
-  },
-  function (error) {
-    //请求错误时做些事
-    return Promise.reject(error);
-  }
-);
 
 //添加响应拦截器
 Vue.prototype.$axios.interceptors.response.use(function (response) {
   if (response.data.code == '1') {
     response.data = response.data.data;
     return response;
-  } else {
+  }/* else if (response.data.code == '403') {
+    router.replace({name: 'home'})
+  } */ else {
+
     throw {response: response};
   }
 
 }, function (error) {
   if (error.response && error.response.data.code) {
-    if (parseInt(error.response.data.code) > 0) {
+    if (parseInt(error.response.data.code) >= 0) {
 
     } else {
       return Promise.reject(error);
@@ -49,6 +43,10 @@ Vue.prototype.$axios.interceptors.response.use(function (response) {
   }
 
 });
+
+Vue.prototype.$getUser = function () {
+  return SessionUtil.getUser();
+}
 
 
 new Vue({
