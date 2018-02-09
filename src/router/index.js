@@ -7,7 +7,7 @@ import DisplayworkerHome from '@/pages/displayworker/DisplayworkerHome'
 import NewTask from '@/pages/displayworker/task/NewTask'
 import FailTask from '@/pages/displayworker/fail/FailTask'
 import CompactTask from '@/pages/displayworker/compact/CompactTask'
-
+import NoInvitedDetail from '@/pages/displayworker/task/NoInvitedDetail'
 
 Vue.use(Router)
 
@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: HelloWorld
     },
     {
       path: '/displayworker',
@@ -40,6 +40,10 @@ export default new Router({
           component: CompactTask
         }
       ]
+    }, {
+      path: '/displayworker/noinvited/:id',
+      name: 'noinvited',
+      component: NoInvitedDetail
     }
   ]
 })

@@ -167,3 +167,59 @@ html, body {
   margin: 10px 0;
   border: solid 1px #b5b4b4;
 }
+
+.body-wrapper {
+  width: 1000px;
+  margin: auto;
+}
+
+.remark {
+  height: 20px;
+  width: 100%;
+  padding: 20px 0;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.remark .el-breadcrumb__item {
+  height: 20px;
+  line-height: 20px;
+}
+
+.left-time {
+  height: 26px;
+  padding: 27px 0;
+  font-size: 16px;
+  position: relative;
+}
+
+.left-time .time-icon {
+  height: 18px;
+  width: 18px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.left-time .info {
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  margin-left: 10px;
+  color: #5a5a5a;
+  vertical-align: top;
+}
+
+.left-time .status {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 12px;
+  line-height: 26px;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background: #54c9d7;
+  vertical-align: top;
+  font-size: 14px;
+  cursor: pointer;
+}

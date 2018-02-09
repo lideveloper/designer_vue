@@ -101,7 +101,7 @@
         loading: false, //网格loading状态
         isShow: false,
         tableHeight: 0,//网格高度
-        activeName: '01',//激活的tab状态
+        activeName: this.$route.query.status ? this.$route.query.status : '01',//激活的tab状态
         search_start: "",//搜索开始日期
         search_end: "",//搜索截至日期
         search_deadline: '',//搜索状态
@@ -122,7 +122,7 @@
         this.search_deadline = '';
       },
       tabClick: function (val) {
-        this.status = val;
+        /*this.status = val;*/
         this.refresh();
       },
       handleSizeChange: function (val) {
@@ -176,7 +176,9 @@
         }
       },
       openDetail: function (id) {
-        console.log(id);
+        if (this.activeName == '01') {
+          this.$router.push({name: "noinvited", params: {id: id}})
+        }
       }
     },
     filters: {
