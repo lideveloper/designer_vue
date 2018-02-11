@@ -4,6 +4,7 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 12px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
 }
 
 .el-tabs--left .el-tabs__nav-wrap {
@@ -223,3 +224,20 @@ html, body {
   font-size: 14px;
   cursor: pointer;
 }
+
+.title-area {
+  width: 100%;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.title-area .title {
+  display: inline-block;
+  position: relative;
+  bottom: -1px;
+  border-bottom: 3px solid #5c5c5c;
+  font-size: 16px;
+  color: #5c5c5c;
+  height: 40px;
+  line-height: 40px;
+}
+

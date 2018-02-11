@@ -136,7 +136,7 @@
       refresh: function () {
         var params = {
           userId: 1,
-          status: this.activeName,
+          //status: this.activeName,
           receiveTimeFrom: this.search_start ? this.$format(this.search_start) : '',
           receiveTimeTo: this.search_end ? this.$format(this.search_end) : '',
           expired: this.search_deadline,
@@ -178,6 +178,10 @@
       openDetail: function (id) {
         if (this.activeName == '01') {
           this.$router.push({name: "noinvited", params: {id: id}})
+        }else if (this.activeName == '102') {
+          this.$router.push({name: "discuss", params: {id: id}})
+        }else if (this.activeName == '701') {
+          this.$router.push({name: "signdesign", params: {id: id}})
         }
       }
     },

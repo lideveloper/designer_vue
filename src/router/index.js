@@ -8,6 +8,8 @@ import NewTask from '@/pages/displayworker/task/NewTask'
 import FailTask from '@/pages/displayworker/fail/FailTask'
 import CompactTask from '@/pages/displayworker/compact/CompactTask'
 import NoInvitedDetail from '@/pages/displayworker/task/NoInvitedDetail'
+import DiscussDetail from '@/pages/displayworker/task/DiscussDetail'
+import SignDesignCompact from '@/pages/displayworker/task/SignDesignCompact'
 
 Vue.use(Router)
 
@@ -44,6 +46,14 @@ export default new Router({
       path: '/displayworker/noinvited/:id',
       name: 'noinvited',
       component: NoInvitedDetail
+    }, {
+      path: '/displayworker/discuss/:id',
+      name: 'discuss',
+      component: DiscussDetail
+    }, {
+      path: '/displayworker/signdesign/:id',
+      name: 'signdesign',
+      component: SignDesignCompact
     }
   ]
 })
