@@ -25,7 +25,7 @@
       </el-tabs>
     </el-aside>
     <el-main style="background: #F2F1F0;position: relative;">
-      <router-view/>
+      <router-view key="123"/>
     </el-main>
   </el-container>
 </template>

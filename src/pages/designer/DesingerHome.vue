@@ -13,7 +13,7 @@
         </div>
       </div>
       <el-tabs :tab-position="'left'" v-model="activeName" class="tab">
-        <el-tab-pane name="newdesinger">
+        <el-tab-pane name="designlist">
           <div class="item" @click="goNewDesigner" slot="label"><i class="icon task"></i> 任务管理</div>
         </el-tab-pane>
         <el-tab-pane name="material">
@@ -34,18 +34,18 @@
   export default {
     data: function () {
       return {
-        activeName: "fail"
+        activeName: "newdesinger"
       }
     },
     methods: {
       goNewDesigner: function () {
-        this.$router.history.push({name: 'newtask'});
+        this.$router.history.push({name: 'designlist'});
       },
       goMaterial: function () {
-        this.$router.history.push({name: 'failtask'});
+        this.$router.history.push({name: 'material'});
       },
       goTemplate: function () {
-        this.$router.history.push({name: 'compacttask'});
+        this.$router.history.push({name: 'template'});
       }
     },
     mounted: function () {

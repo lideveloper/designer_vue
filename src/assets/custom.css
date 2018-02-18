@@ -89,8 +89,9 @@ html, body {
 
 .el-date-editor.el-input, .el-date-editor.el-input__inner, .el-input--small .el-input__inner, .el-input--small {
   width: 180px;
-  /*margin-top: 4px;*/
+/*  !*margin-top: 4px;*!
   height: 32px;
+  line-height: 32px;*/
 }
 
 .el-button {
@@ -103,9 +104,9 @@ html, body {
   line-height: 32px;
 }
 
-.el-input--small {
+/*.el-input--small {
   margin-top: 4px;
-}
+}*/
 
 .el-table {
   flex-grow: 1;

@@ -46,6 +46,7 @@
   export default {
     data: function () {
       return {
+        id: this.$route.params.id,
         form: {
           phoneStatus: '',
           remark: ''
@@ -67,10 +68,11 @@
       },
       submit: function (formName) {
         this.$refs[formName].validate((valid) => {
-          if (valid) {
-            console.log(this.form)
-          }
+          //if (valid) {
+
+          //}
         });
+        this.$router.push({name: "discuss", params: {id: this.id}})
       }
     },
     components: {

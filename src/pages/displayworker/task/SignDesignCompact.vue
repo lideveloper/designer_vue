@@ -26,7 +26,7 @@
       </el-form-item>
 
       <el-form-item label="设计合同模板：">
-        <el-select v-model="value" size="small" placeholder="请选择">
+        <el-select v-model="form.value" size="small" placeholder="请选择">
           <el-option
             v-for="item in 5"
             :key="item"
@@ -34,18 +34,15 @@
             :value="item">
           </el-option>
         </el-select>
-        <!--<el-button>打印</el-button>-->
+        <el-button class="print-button" :disabled="form.value==''">打印</el-button>
       </el-form-item>
 
 
-      <el-form-item label="方案倾向：" prop="phoneStatus">
-        <el-radio-group v-model="form.phoneStatus">
-          <el-radio :label="1">方案一</el-radio>
-          <el-radio :label="2">方案二</el-radio>
-        </el-radio-group>
+      <el-form-item label="上传设计合同：">
+        <me-upload v-on:uploadSuccess="uploadSuccess"></me-upload>
       </el-form-item>
 
-      <el-form-item label="是否接受设计订制：">
+      <el-form-item label-width="138px" label="是否已付设计尾款：">
         <el-switch
           v-model="form.delivery"
           active-text="是"
@@ -54,11 +51,17 @@
       </el-form-item>
 
 
+
+      <el-form-item label="上传收费单：">
+        <me-upload v-on:uploadSuccess="uploadSuccess"></me-upload>
+      </el-form-item>
+
+
+
       <el-form-item>
         <el-button @click="save('form')">存草稿</el-button>
         <el-button type="primary" @click="submit('form')">下一步</el-button>
       </el-form-item>
-
     </el-form>
   </div>
 </template>
@@ -67,6 +70,7 @@
   import MeSteps from '@/components/MeSteps.vue'
   import MeCustomerInfo from '@/components/MeCustomerInfo.vue'
   import MeRemark from '@/components/MeRemark.vue'
+  import MeUpload from '@/components/MeUpload.vue'
 
   export default {
     data: function () {
@@ -76,6 +80,8 @@
         dialogFormVisible: false,
         form: {
           phoneStatus: '',
+          value: "",
+          fileid: ''
         },
         rules: {
           phoneStatus: [
@@ -87,6 +93,10 @@
     methods: {
       openDetail: function (i) {
         this.dialogFormVisible = true;
+      },
+      uploadSuccess: function (fileid) {
+        this.form.fileid = fileid
+        console.log(this.form.fileid );
       },
       save: function (formName) {
         this.$refs[formName].validate((valid) => {
@@ -106,20 +116,20 @@
     components: {
       MeSteps,
       MeCustomerInfo,
-      MeRemark
+      MeRemark,
+      MeUpload
     }
   }
 </script>
 
 <style scoped>
 
-
   form {
     margin: 20px 0;
   }
 
-  .el-input--small {
-    margin-top: 0;
+  .print-button {
+    vertical-align: middle;
   }
 
 </style>

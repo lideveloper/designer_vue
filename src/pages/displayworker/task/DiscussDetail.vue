@@ -36,7 +36,7 @@
             <img src="../../../assets/image/temp/u1272.jpg" @click="openDetail(i)"/>
             <!--<div class="name">模板一</div>-->
             <div class="select">
-              <el-radio v-model="preference" :label="i">选择模板{{i}}</el-radio>
+              <el-radio v-model="form.preference" :label="i">选择模板{{i}}</el-radio>
             </div>
           </el-card>
         </el-col>
@@ -63,7 +63,7 @@
       </el-form-item>
 
       <el-form-item label="方案倾向：" prop="phoneStatus">
-        <el-radio-group v-model="form.phoneStatus">
+        <el-radio-group v-model="form.preference">
           <el-radio :label="1">方案一</el-radio>
           <el-radio :label="2">方案二</el-radio>
         </el-radio-group>
@@ -95,11 +95,12 @@
   export default {
     data: function () {
       return {
+        id: this.$route.params.id,
         remark: '这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小区这是一个刚开盘的小！',
-        preference: '',
         dialogFormVisible: false,
         form: {
           phoneStatus: '',
+          preference: '',
         },
         rules: {
           phoneStatus: [
@@ -125,6 +126,7 @@
             console.log(this.form)
           }
         });
+        this.$router.push({name: "signdesign", params: {id: this.id}})
       }
     },
     components: {
