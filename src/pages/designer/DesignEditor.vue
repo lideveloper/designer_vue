@@ -56,7 +56,7 @@
     </div>
     <el-dialog title="选择素材" :visible.sync="dialogopened" width="1200px" :fullscreen="false">
       <div class="materials">
-        <el-card class="material" v-for="n in 4" v-key="n">
+        <el-card class="material" v-for="n in 10" v-key="n">
           <img src="examples/assets/images/hamburger.png" class="image">
         </el-card>
       </div>
@@ -170,6 +170,7 @@
 
   .materials {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .materials .material {
