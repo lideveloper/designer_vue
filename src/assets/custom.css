@@ -124,6 +124,11 @@ html, body {
   border-color: #b5b4b4;
 }
 
+.el-popover{
+  padding: 0;
+}
+
+
 /**
   公用样式
  */

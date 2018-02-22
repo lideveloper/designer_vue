@@ -26,11 +26,11 @@ function InitMenuUtil(container) {
 
     var subMenuRotate = $("<div class='subMenu'>" +
         "<div class='item' type='left90' value='90'>" +
-        "   <img src='/src/assets/image/design/87-transform-rotate-counterclockwise.png'/><div class='text'>左旋90°</div>" +
+        "   <img src='/src/assets/image/design/rotate-90.png'/><div class='text'>左旋90°</div>" +
         "</div>" +
 
         "<div class='item' type='right90' value='-90'>" +
-        "   <img src='/src/assets/image/design/88-transform-rotate-clockwise.png'/><div class='text'>右旋90°</div>" +
+        "   <img src='/src/assets/image/design/rotate90.png'/><div class='text'>右旋90°</div>" +
         "</div>" +
 
         "<div class='item' type='rotate180' value='180'>" +
@@ -49,10 +49,10 @@ function InitMenuUtil(container) {
 
     var subMenuFilter = $("<div class='subMenu'>" +
         "<div class='item' type='colorPicker' value='colorPicker'>" +
-        "   <img style='width:16px;height:16px;padding: 7px' src='/src/assets/image/design/50.png'/><div class='text'>颜色过滤</div>" +
+        "   <img  src='/src/assets/image/design/filter.png'/><div class='text'>颜色过滤</div>" +
         "</div>" +
         "<div class='item' type='imgClip' value='imgClip'>" +
-        "   <img style='width:16px;height:16px;padding: 7px' src='/src/assets/image/design/cut.png'/><div class='text'>图片剪切</div>" +
+        "   <img  src='/src/assets/image/design/cut.png'/><div class='text'>图片剪切</div>" +
         "</div>" +
         "</div>");
 

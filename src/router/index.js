@@ -15,13 +15,13 @@ import SignDesignCompact from '@/pages/displayworker/task/SignDesignCompact'
 
 import DesingerHome from '@/pages/designer/DesingerHome'
 import DesignTaskList from '@/pages/designer/designlist/DesignTaskList'
-
+import DesignEditor from '@/pages/designer/DesignEditor'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/', redirect: '/designer/designlist'},
+    {path: '/', redirect: '/editor'},
     {
       path: '/login',
       name: 'login',
@@ -60,7 +60,7 @@ export default new Router({
       path: '/displayworker/signdesign/:id',
       name: 'signdesign',
       component: SignDesignCompact
-    },{
+    }, {
       path: '/designer',
       name: 'designer',
       component: DesingerHome,
@@ -69,18 +69,12 @@ export default new Router({
           path: "designlist",
           name: "designlist",
           component: DesignTaskList
-        }/*,
-        {
-          path: "fail",
-          name: "failtask",
-          component: FailTask
-        },
-        {
-          path: "compact",
-          name: "compacttask",
-          component: CompactTask
-        }*/
+        }
       ]
+    }, {
+      path: "/editor",
+      name: "editor",
+      component: DesignEditor
     }
   ]
 })

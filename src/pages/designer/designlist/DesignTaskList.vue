@@ -90,17 +90,11 @@
 
     </div>
 
-    <el-dialog title="收货地址" width="1200px"  :visible.sync="dialogTableVisible">
-      <me-design-editor></me-design-editor>
-    </el-dialog>
-
 
   </div>
 </template>
 
 <script>
-  import MeDesignEditor from '@/components/MeDesignEditor.vue'
-
   export default {
     data: function () {
       return {
@@ -183,13 +177,7 @@
         }
       },
       openDetail: function (id) {
-        if (this.activeName == '01') {
-          this.$router.push({name: "noinvited", params: {id: id}})
-        } else if (this.activeName == '102') {
-          this.$router.push({name: "discuss", params: {id: id}})
-        } else if (this.activeName == '701') {
-          this.$router.push({name: "signdesign", params: {id: id}})
-        }
+        this.$router.push({name: "editor", params: {id: id}})
       },
       dateFilter: function (a, b, c, d) {
         console.log(a, b, c, d)
@@ -215,9 +203,6 @@
         that.tableHeight = that.$refs["table-area"]['offsetHeight'] - 2;
       }
       this.refresh();
-    },
-    components: {
-      MeDesignEditor
     }
   }
 </script>
